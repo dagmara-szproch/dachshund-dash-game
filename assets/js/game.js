@@ -159,6 +159,21 @@ function gameLoop() {
     draw();
 }
 
+// Mobile Controls - function taken from gptChat
+function setupMobileControls() {
+    const controls = {
+      up: () => direction !== 'down' && (direction = 'up'),
+      down: () => direction !== 'up' && (direction = 'down'),
+      left: () => direction !== 'right' && (direction = 'left'),
+      right: () => direction !== 'left' && (direction = 'right')
+    };
+  
+    Object.entries(controls).forEach(([dir, handler]) => {
+      document.querySelector(`.${dir}`).addEventListener('touchstart', (e) => {
+        e.preventDefault();
+        handler();
+      });
+
 // Initialise Game
 function initGame() {
     createGameBoard();
@@ -170,6 +185,8 @@ function initGame() {
     
     if (gameInterval) clearInterval(gameInterval);
     gameInterval = setInterval(gameLoop, 200);
+
+    setupMobileControls();
 }
 
 // Start the game
