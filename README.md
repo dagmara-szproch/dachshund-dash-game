@@ -118,6 +118,26 @@ These illustrations add a warm and friendly aesthetic that supports the theme of
 
 **Goal:** The game is fully playable using simple coloured squares — no graphics yet.
 
+Stage 1 focuses on core functionality.
+In this stage, I will focus on building the fundamental parts of the game: grid generation, movement logic, and collision detection.
+To achieve this, I will implement the following functions and components:
+
+- Core game variables (to store game state such as snake position, direction, food, etc.)
+
+- createGameBoard() — to dynamically generate the game grid.
+
+- moveSnake() — to handle the movement of the snake.
+
+- checkCollision() — to detect collisions with walls or the snake itself.
+
+- generateFood() — to randomly place food on the board.
+
+- Keyboard controls — using an eventListener to capture user input.
+
+- gameLoop() — the main function that updates the game state at regular intervals.
+
+[stage 1 functions and components](docs/function-stage1.png)
+
 #### Stage 2: Mobile Touch Support
 
 -	Create on-screen arrow buttons or add swipe gesture controls.
