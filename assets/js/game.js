@@ -50,14 +50,38 @@ function moveDachshund() {
     dachshund.pop();  // remove the last element of the array (tail\) 
 }
 
-// function checkCollision() 
+function checkCollision() {
+    // get current head position
+    const head = dachshund[0];
+
+    // wall collison check
+    if (head.x < 1 || head.x > gridSize || head.y < 1 || head.y > gridSize) {
+        console.log('Wall collision');
+        return true
+    }
+
+    // self collision
+    for (let i = 1; i < dachshund.length; i++) {
+        if (head.x === dachshund[i].x && head.y === dachshund[i].y) {
+            console.log('Self collision');
+            return true;
+        }
+    }
+    return false // no collision
+}
 
 // function generateFood() 
 
 // // 3. Keyboard Controls - eventListener
 
-// // 4. Game Loop
-// function gameLoop() 
+// 4. Game Loop
+function gameLoop() {
+    moveDachshund();
+
+    if (checkCollision()) {
+
+    }
+}
 
 
 // Export for testing (bottom of file)
