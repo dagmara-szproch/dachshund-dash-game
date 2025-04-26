@@ -1,11 +1,13 @@
-console.log('Hello');
+// console.log('Hello');
 
 // Core Game Variables
 const gridSize = 20;
 const board = document.getElementById('game-board');
 let dachshund = [{x: 10, y: 10}];
-let food = {x: 5, y: 5};
-let direction = 'RIGHT';
+let food = generateFood();
+let direction = 'right';
+let gameInterval;
+let score = 0;
 
 //1. Initialise Board 
 function createGameBoard() {
@@ -17,7 +19,6 @@ function createGameBoard() {
         const cell = document.createElement('div');
         board.appendChild(cell);
     }
-
 }
 
 // 2. Main Game Functions
@@ -47,7 +48,15 @@ function moveDachshund() {
 
     // add new head and remove tail
     dachshund.unshift(head); // add to the beginnig of the array (make the new head)
-    dachshund.pop();  // remove the last element of the array (tail\) 
+
+    // check if food was eaten
+    if (head.x === food.x && head.y === food.y) {
+        food = generateFood();
+        score++;
+        document.getElementById('score').textContent = `Score: ${score}`;
+    } else {
+    dachshund.pop();  // remove the last element of the array (tail\)
+    }
 }
 
 function checkCollision() {
@@ -89,35 +98,78 @@ function generateFood() {
     return newFood
 }
 
+function draw() {
+    const cells = board.children;
+
+    // clear all cells
+    for (let i = 0; i < cells.length; i++) {
+        cells[i].className = '';
+    }
+
+    // Draw dachshund
+    dachshund.forEach(segment => {
+        const index = segment.y * gridSize + segment.x;
+        if (index >= 0 && index < cells.length) {
+            cells[index].classList.add('dachshund');
+            if (index === 0) cells[cellIndex].classList.add('head');
+        }
+    });
+
+    // Draw food
+    const foodIndex = food.y * gridSize + food.x;
+    if (foodIndex >= 0 && foodIndex < cells.length) {
+        cells[foodIndex].classList.add('food');
+    }
+}
+
 
 // 3. Keyboard Controls - eventListener
 document.addEventListener('keydown', (e) => {
     switch (e.key) {
         case 'ArrowUp':
-            if (direction !== 'DOWN') direction = 'UP';
+            if (direction !== 'down') direction = 'up';
             break;
         case 'ArrowDown':
-            if (direction !== 'UP') direction = 'DOWN';
+            if (direction !== 'up') direction = 'down';
             break;
         case 'ArrowLeft':
-            if (direction !== 'RIGHT') direction = 'LEFT';
+            if (direction !== 'right') direction = 'left';
             break;
         case 'ArrowRight':
-            if (direction !== 'LEFT') direction = 'RIGHT';
+            if (direction !== 'left') direction = 'right';
             break;
     }
 });
+
 
 // 4. Game Loop
 function gameLoop() {
     moveDachshund();
 
     if (checkCollision()) {
-
+        clearInterval(gameInterval);
+        alert('Game Over! Score: &{score}');
+        return
     }
+
+    draw();
 }
 
+// Initialise Game
+function initGame() {
+    createGameBoard();
+    dachshund = [{x: 10, y: 10}];
+    food = generateFood();
+    direction = 'right';
+    score = 0;
+    document.getElementById('score').textContent = `Score: ${score}`;
+    
+    if (gameInterval) clearInterval(gameInterval);
+    gameInterval = setInterval(gameLoop, 200);
+}
 
-// Export for testing (bottom of file)
-// window.createGameBoard = createGameBoard;
-// window.onload = createGameBoard;
+// Start the game
+initGame();
+
+// Restart button
+document.getElementById('restart-btn').addEventListener('click', initGame);
