@@ -7,7 +7,7 @@ let food = generateFood();
 let direction = 'right';
 let gameInterval;
 let score = 0;
-let gridSize = getSizeBoard();
+let gridSize = getBoardSize();
 let touchStartX = 0;
 let touchStartY = 0;
 
@@ -202,7 +202,7 @@ function gameLoop() {
 
     if (checkCollision()) {
         clearInterval(gameInterval);
-        alert(`Game Over! Score: &{score}`);
+        alert(`Game Over! Score: ${score}`);
         return
     }
 
@@ -212,7 +212,4 @@ function gameLoop() {
 // Start the game
 window.addEventListener('DOMContentLoaded', initGame);
 window.addEventListener('resize', handleResize);
-document.getElementById('restart-btn').addEventListener('click', initGame);
-
-// Restart button
 document.getElementById('restart-btn').addEventListener('click', initGame);
