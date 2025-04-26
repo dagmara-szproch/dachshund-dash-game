@@ -64,7 +64,7 @@ function checkCollision() {
     const head = dachshund[0];
 
     // wall collison check
-    if (head.x < 0 || head.x > gridSize || head.y < 0 || head.y > gridSize) {
+    if (head.x < 0 || head.x > gridSize -1 || head.y < 0 || head.y > gridSize -1) {
         console.log('Wall collision');
         return true
     }
@@ -123,8 +123,12 @@ function draw() {
 }
 
 
-// 3. Keyboard Controls - eventListener
+// 3. Keyboard Controls - eventListener. This () also prevent opposite direction changes
 document.addEventListener('keydown', (e) => {
+    // Prevent default for arrow keys
+    if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.key)) {
+        e.preventDefault();
+    }
     switch (e.key) {
         case 'ArrowUp':
             if (direction !== 'down') direction = 'up';
