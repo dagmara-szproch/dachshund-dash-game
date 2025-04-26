@@ -205,6 +205,18 @@ To achieve this, I will implement the following functions and components:
 
 ![Stage 1 - Testing](docs/stage1-testing.png)
 
+#### Stage 2 Testing
+
+My initial intention for Stage 2 was to design clickable control buttons for mobile users. Unfortunately, after many trials and errors, I decided to abandon this idea. It was difficult to design buttons that were comfortable for players, both in terms of size and positioning on the screen. As an alternative, I chose to implement swipe functionality, which may actually be an even better solution, as users are already very familiar with swiping gestures on mobile devices.
+
+With the help of AI, I successfully added the swipe feature and removed the original control buttons. However, several new issues appeared. Firstly, I encountered a typo: I mistakenly used getSizeBoard instead of getBoardSize, which led to problems with variables and the order of their initialisation. Once corrected, further testing revealed that my swipe code was initially limited to only work within the game board area, which felt very uncomfortable when playing. I addressed this by extending the swipe detection to the **main** area, creating a much better experience.
+
+Another challenge arose when the restart button became sensitive to swipe gestures. Initially, I tried an AI-generated function to prevent this behaviour, but as it did not work correctly, I decided to move the restart button to the header. This change actually simplified the code, improving both functionality and structure.
+
+The only remaining issue is that the footer does not stick perfectly to the bottom of the screen. However, I have decided to leave styling improvements for Stage 3, where I will focus on making the game visually appealing.
+
+![Stage 2 - Testing](docs/stage2-testing.png)
+
 ### Automated Testing
 
 ### Accessibility
