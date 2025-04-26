@@ -1,1 +1,85 @@
-body {background-color: aqua;}
+/* Base Styles */
+body {
+    margin: 0;
+    font-family: 'Barriecito', cursive, sans-serif;
+    text-align: center;
+    background-color: #F1E9D2; /* Cream color */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Header */
+  .game-header {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #F1E9D2;
+    padding: 10px;
+    border-radius: 12px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 600px;
+  }
+  
+  .game-header h1 {
+    margin: 0;
+    font-size: 1.8em;
+  }
+  
+  .header-bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  /* Game Board */
+  #game-board {
+    display: grid;
+    margin: 20px auto;
+    border: 2px solid #8B5E3C; /* Brown border */
+    background-color: #F1E9D2; /* Cream background */
+    width: 90vmin;
+    height: 90vmin;
+    max-width: 600px;
+    max-height: 600px;
+  }
+  
+  /* Game Elements */
+  .snake {
+    background-color: #222; /* Dark dachshund color */
+  }
+  
+  .food {
+    background-color: #ff6347; /* Tomato red */
+    border-radius: 50%;
+  }
+  
+  .head {
+    background-color: #555 !important;
+  }
+  
+  /* Footer */
+  .game-footer {
+    padding: 10px;
+    color: #F1E9D2;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  
+  .game-footer a {
+    color: #F1E9D2;
+    margin: 0 10px;
+    text-decoration: none;
+  }
+  
+  /* Prototype Controls */
+  .game-controls {
+    margin: 20px auto;
+  }
+  
+  .control-btn {
+    padding: 8px 16px;
+    background: #8B5E3C; /* Brown color */
+    color: #F1E9D2;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
