@@ -20,8 +20,35 @@ function createGameBoard() {
 
 }
 
-// // 2. Main Game Functions
-// function moveSnake() 
+// 2. Main Game Functions
+// moving the dachshund
+function moveDachshund() {
+    //get current head position; (...) creates a copy of the head object
+    const head = {...dachshund[0]};
+    // update position based on direction
+    switch (direction) {
+        // move up (decrease y)
+        case 'up':
+            head.y--;
+            break;
+        // move down (increase y)    
+        case 'down':
+            head.y++;
+            break;
+        // move left (decrease x)    
+        case 'left':
+            head.x--;
+            break;
+        // move right (increase x)
+        case 'right':
+            head.x++;
+            break;
+    }
+
+    // add new head and remove tail
+    dachshund.unshift(head); // add to the beginnig of the array (make the new head)
+    dachshund.pop();  // remove the last element of the array (tail\) 
+}
 
 // function checkCollision() 
 
