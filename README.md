@@ -191,6 +191,8 @@ To achieve this, I will implement the following functions and components:
 
 ## Testing
 
+
+
 ### Bugs
 
 ### Unresolved Bugs
@@ -198,6 +200,10 @@ To achieve this, I will implement the following functions and components:
 ### Testing User Stories
 
 ### Manual Testing
+
+#### Stage 1 Testing
+
+![Stage 1 - Testing](docs/stage1-testing.png)
 
 ### Automated Testing
 
