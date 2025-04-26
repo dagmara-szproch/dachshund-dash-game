@@ -220,14 +220,4 @@ function gameLoop() {
 window.addEventListener('DOMContentLoaded', initGame);
 window.addEventListener('resize', handleResize);
 
-const restartBtn = document.getElementById('restart-btn');
-// Handle both click and touch events
-restartBtn.addEventListener('click', handleRestart);
-restartBtn.addEventListener('touchend', handleRestart);
-
-// function generate with AI help
-function handleRestart(e) {
-    e.stopPropagation(); //  Critical! Prevents swipe events from triggering
-    e.preventDefault();  //  Prevents ghost clicks on mobile
-    initGame();
-}
+document.getElementById('restart-btn').addEventListener('click', initGame);
