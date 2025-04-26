@@ -9,7 +9,7 @@
     - [Wireframes](#wireframes)
 - [Game Logic](#game-logic)    
 - [Features](#features)
-- [Technologies Used](#technologies-used)
+- [Technologies and Tools Used](#technologies-and-tools-used)
 - [Code](#code)
 - [Testing](#testing)
     - [Bugs](#bugs)
@@ -69,11 +69,34 @@ The project's **Kanban Board** can be viewd [here](https://github.com/users/dagm
 
 ### Design Choices
 
+#### Colour Scheme
+The colour choices were made with clarity, contrast, and a playful tone in mind:
+
+- Header and footer: rgba(0, 0, 0, 0.6) provides a slightly transparent, dark overlay that makes the text and icons stand out without being too harsh.
+
+- Game board: #f5f0e1 – a soft beige colour that is gentle on the eyes and contrasts nicely with both the dachshund and food items.
+
 #### Fonts
+
+For the main heading and playful elements of the game, I chose the **Barriecito** font from [Google Fonts](https://fonts.google.com/). It has a fun, hand-drawn look that fits the light-hearted and friendly tone of the game, especially considering the target audience of younger players.
+![Example of Barriecito Font](docs/barriecito-font-example.png)
 
 #### Icons
 
+I used [Font Awesome](https://fontawesome.com/) icons to enhance interactivity and clarity:
+
+- Sound and music controls feature easily recognisable speaker and music icons.
+
+- Footer links include icons for GitHub and LinkedIn, helping to visually guide users to professional and project-related resources.
+
 #### Images
+All images used in the project were sourced from Pixabay, which offers free-to-use illustrations:
+
+- Game background: [Dachshund Drawing](https://pixabay.com/illustrations/dachshund-dog-animal-pet-drawing-8707182/)
+
+- Favicon and in-game dachshund character: [Dachshund Drawing](https://pixabay.com/illustrations/dachshund-dog-animal-pet-drawing-8707181/)
+
+These illustrations add a warm and friendly aesthetic that supports the theme of a dachshund-themed game.
 
 ### Wireframes
 
@@ -81,9 +104,68 @@ The project's **Kanban Board** can be viewd [here](https://github.com/users/dagm
 
 ## Game Logic
 
+### Development Roadmap
+
+#### Stage 1: Core Logic Prototype
+
+-	Create the game grid.
+-	Build the snake movement logic in JavaScript.
+-	Implement food spawning and food-eating logic.
+-	Make the snake grow after eating food.
+-	Detect collisions with the walls or with itself (trigger game over).
+-	Add basic keyboard controls (arrow keys).
+-	Implement a scoring system and allow restarting the game.
+
+**Goal:** The game is fully playable using simple coloured squares — no graphics yet.
+
+#### Stage 2: Mobile Touch Support
+
+-	Create on-screen arrow buttons or add swipe gesture controls.
+-	Adjust the game board size for smaller screens.
+-	Ensure touch buttons are large enough and comfortably spaced for fingers.
+-	Test functionality across different mobile and tablet devices.
+
+**Goal: Smooth gameplay experience on both desktop and mobile**
+
+#### Stage 3: Game Menus and Enhancements
+
+-	Add a start screen, game over screen, and pause functionality.
+-	Implement basic sound effects (e.g., food eaten, game over) and background music.
+-	Introduce two difficulty levels: Easy and Hard, with adjustable speed.
+-	Integrate existing header buttons (e.g., sound/music toggles) properly into the game flow.
+
+**Goal: A more polished, interactive experience with sound and basic game settings**
+
+#### Stage 4: Visual Design — Dachshund Theme
+
+-	Design and prepare dachshund images (head, body, tail).
+-	Optionally, create a "turn" piece for smoother movement visuals.
+-	Replace simple blocks with dachshund images.
+-	Implement image rotation to match movement direction (so the dog "turns" properly).
+-	Replace the food block with a bone emoji or a bone image.
+-	Fine-tune image sizing so everything fits the grid cleanly.
+
+**Goal: Same gameplay, but visually transformed with charming dachshund graphics**
+
+#### Stage 5: Future Improvements
+
+-	Add more detailed animations (e.g., wagging tail when eating food).
+-	Include a high score system stored locally.
+-	Implement a settings panel (mute music, reset game, theme toggle).
+-	Create special bonus items (speed boosts, extra points).
+-	Polish responsive design even further for various screen sizes.
+-	Improve accessibility (keyboard navigation, better colour contrast).
+
+**Goal: Continue enhancing gameplay, visuals, and usability based on feedback and testing**
+
+
+### Game flowchart
+
+![Game flowchart](docs/game-flowchart.png)
+
 ## Features
 
-## Technologies Used
+## Technologies and Tools Used
 
 ## Code
 
@@ -110,3 +192,6 @@ The project's **Kanban Board** can be viewd [here](https://github.com/users/dagm
 ### Content
 
 ### Media
+
+- [Dachshund Drawing](https://pixabay.com/illustrations/dachshund-dog-animal-pet-drawing-8707181/)
+- [Dachshund Drawing](https://pixabay.com/illustrations/dachshund-dog-animal-pet-drawing-8707182/)
