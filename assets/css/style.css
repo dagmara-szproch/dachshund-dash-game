@@ -137,7 +137,12 @@ body {
     .mobile-controls {
       display: flex;
       justify-content: center;
+      margin: 20px 0;
     }
+
+    /* .game-controls {
+        display: none; /* Hide restart button on mobile */
+      } */
   }
   
   /* Tablet Sizes */

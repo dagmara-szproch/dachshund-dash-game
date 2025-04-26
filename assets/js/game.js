@@ -145,40 +145,24 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-
-// 4. Game Loop
-function gameLoop() {
-    moveDachshund();
-
-    if (checkCollision()) {
-        clearInterval(gameInterval);
-        alert('Game Over! Score: &{score}');
-        return
-    }
-
-    draw();
-}
-
-// Mobile Controls
+// mobile controls
 function initMobileControls() {
     const directions = {
-      up: () => { if (direction !== 'down') direction = 'up'; },
-      down: () => { if (direction !== 'up') direction = 'down'; },
-      left: () => { if (direction !== 'right') direction = 'left'; },
-      right: () => { if (direction !== 'left') direction = 'right'; }
+        up: () => direction !== 'down' && (direction = 'up'),
+        down: () => direction !== 'up' && (direction = 'down'),
+        left: () => direction !== 'right' && (direction = 'left'),
+        right: () => direction !== 'left' && (direction = 'right')
     };
-  
-    // Add event listeners for both touch and click
+
     Object.keys(directions).forEach(dir => {
-      const btn = document.querySelector(`.${dir}`);
-      btn.addEventListener('touchstart', (e) => {
-        e.preventDefault();
-        directions[dir]();
-      });
-      btn.addEventListener('click', directions[dir]);
+        const btn = document.querySelector(`.${dir}`);
+        btn.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            directions[dir]();
+        });
+        btn.addEventListener('click', directions[dir]);
     });
-  }
-  
+}
 
 // Initialise Game
 function initGame() {
@@ -188,17 +172,28 @@ function initGame() {
     direction = 'right';
     score = 0;
     document.getElementById('score').textContent = `Score: ${score}`;
-
     initMobileControls();
     
     if (gameInterval) clearInterval(gameInterval);
-    gameInterval = setInterval(gameLoop, 200);
+    gameInterval = setInterval(gameLoop, 200);  
+}
 
-    
+// 4. Game Loop
+function gameLoop() {
+    moveDachshund();
+
+    if (checkCollision()) {
+        clearInterval(gameInterval);
+        alert(`Game Over! Score: &{score}`);
+        return
+    }
+
+    draw();
 }
 
 // Start the game
-initGame();
+window.addEventListener('DOMContentLoaded', initGame);
+document.getElementById('restart-btn').addEventListener('click', initGame);
 
 // Restart button
 document.getElementById('restart-btn').addEventListener('click', initGame);
