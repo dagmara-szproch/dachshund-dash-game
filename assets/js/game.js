@@ -161,26 +161,31 @@ document.addEventListener('keydown', (e) => {
 });
 
 // touch controls
-board.addEventListener('touchstart', (e) => {
+const gameContainer = document.getElementById('main-game');
+gameContainer.addEventListener('touchstart', (e) => {
     const touch = e.touches[0];
     touchStartX = touch.clientX;
     touchStartY = touch.clientY;
     e.preventDefault();
 }, { passive: false });
 
-board.addEventListener('touchmove', (e) => {
+gameContainer.addEventListener('touchmove', (e) => {
+    if (!gameInterval) return; // Don't process if game isn't running
     const touch = e.touches[0];
     const dx = touch.clientX - touchStartX;
     const dy = touch.clientY - touchStartY;
     
-    if (Math.abs(dx) > Math.abs(dy)) {
-        if (dx > 50 && direction !== 'left') direction = 'right';
-        else if (dx < -50 && direction !== 'right') direction = 'left';
-    } else {
-        if (dy > 50 && direction !== 'up') direction = 'down';
-        else if (dy < -50 && direction !== 'down') direction = 'up';
+    // Only check if swipe is significant enough
+    if (Math.abs(dx) > 30 || Math.abs(dy) > 30) {
+        if (Math.abs(dx) > Math.abs(dy)) {
+            direction = dx > 0 && direction !== 'left' ? 'right' : 
+                      dx < 0 && direction !== 'right' ? 'left' : direction;
+        } else {
+            direction = dy > 0 && direction !== 'up' ? 'down' : 
+                      dy < 0 && direction !== 'down' ? 'up' : direction;
+        }
+        e.preventDefault();
     }
-    e.preventDefault();
 }, { passive: false });
 
 // Initialise Game
