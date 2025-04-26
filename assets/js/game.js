@@ -79,7 +79,7 @@ function checkCollision() {
     const head = dachshund[0];
 
     // wall collison check
-    if (head.x < 0 || head.x > gridSize -1 || head.y < 0 || head.y > gridSize -1) {
+    if (head.x < 0 || head.x >= gridSize || head.y < 0 || head.y >= gridSize) {
         console.log('Wall collision');
         return true
     }
