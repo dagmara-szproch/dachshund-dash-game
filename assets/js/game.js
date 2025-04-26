@@ -161,7 +161,7 @@ document.addEventListener('keydown', (e) => {
 });
 
 // touch controls
-const gameContainer = document.getElementById('main-game');
+const gameContainer = document.getElementById('game-main');
 gameContainer.addEventListener('touchstart', (e) => {
     const touch = e.touches[0];
     touchStartX = touch.clientX;
