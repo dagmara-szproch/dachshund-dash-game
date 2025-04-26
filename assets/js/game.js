@@ -70,9 +70,43 @@ function checkCollision() {
     return false // no collision
 }
 
-// function generateFood() 
+// function 
+function generateFood() {
+    let newFood;
+    let isPositionValid = false;
+    while (!isPositionValid) {
+        // 1. Generate position 
+        newFood = {
+            x: Math.floor(Math.random() * gridSize),
+            y: Math.floor(Math.random() * gridSize)
+        };
 
-// // 3. Keyboard Controls - eventListener
+        // ensure food not on snake segment
+        isPositionValid = !dachshund.some(segment => 
+            segment.x === newFood.x && segment.y === newFood.y);
+    }
+
+    return newFood
+}
+
+
+// 3. Keyboard Controls - eventListener
+document.addEventListener('keydown', (e) => {
+    switch (e.key) {
+        case 'ArrowUp':
+            if (direction !== 'DOWN') direction = 'UP';
+            break;
+        case 'ArrowDown':
+            if (direction !== 'UP') direction = 'DOWN';
+            break;
+        case 'ArrowLeft':
+            if (direction !== 'RIGHT') direction = 'LEFT';
+            break;
+        case 'ArrowRight':
+            if (direction !== 'LEFT') direction = 'RIGHT';
+            break;
+    }
+});
 
 // 4. Game Loop
 function gameLoop() {
@@ -85,5 +119,5 @@ function gameLoop() {
 
 
 // Export for testing (bottom of file)
-window.createGameBoard = createGameBoard;
-window.onload = createGameBoard;
+// window.createGameBoard = createGameBoard;
+// window.onload = createGameBoard;
