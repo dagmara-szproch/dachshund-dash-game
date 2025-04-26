@@ -3,7 +3,7 @@
 // Core Game Variables
 const gridSize = 20;
 const board = document.getElementById('game-board');
-let dachshund = [{x: 10, y: 10}];
+let dachshund = [{x: 5, y: 10}];
 let food = generateFood();
 let direction = 'right';
 let gameInterval;
@@ -159,34 +159,42 @@ function gameLoop() {
     draw();
 }
 
-// Mobile Controls - function taken from gptChat
-function setupMobileControls() {
-    const controls = {
-      up: () => direction !== 'down' && (direction = 'up'),
-      down: () => direction !== 'up' && (direction = 'down'),
-      left: () => direction !== 'right' && (direction = 'left'),
-      right: () => direction !== 'left' && (direction = 'right')
+// Mobile Controls
+function initMobileControls() {
+    const directions = {
+      up: () => { if (direction !== 'down') direction = 'up'; },
+      down: () => { if (direction !== 'up') direction = 'down'; },
+      left: () => { if (direction !== 'right') direction = 'left'; },
+      right: () => { if (direction !== 'left') direction = 'right'; }
     };
   
-    Object.entries(controls).forEach(([dir, handler]) => {
-      document.querySelector(`.${dir}`).addEventListener('touchstart', (e) => {
+    // Add event listeners for both touch and click
+    Object.keys(directions).forEach(dir => {
+      const btn = document.querySelector(`.${dir}`);
+      btn.addEventListener('touchstart', (e) => {
         e.preventDefault();
-        handler();
+        directions[dir]();
       });
+      btn.addEventListener('click', directions[dir]);
+    });
+  }
+  
 
 // Initialise Game
 function initGame() {
     createGameBoard();
-    dachshund = [{x: 10, y: 10}];
+    dachshund = [{x: 5, y: 10}];
     food = generateFood();
     direction = 'right';
     score = 0;
     document.getElementById('score').textContent = `Score: ${score}`;
+
+    initMobileControls();
     
     if (gameInterval) clearInterval(gameInterval);
     gameInterval = setInterval(gameLoop, 200);
 
-    setupMobileControls();
+    
 }
 
 // Start the game
