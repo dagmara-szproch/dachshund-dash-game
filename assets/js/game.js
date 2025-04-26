@@ -1,16 +1,23 @@
 // console.log('Hello');
 
 // Core Game Variables
-const gridSize = 20;
 const board = document.getElementById('game-board');
 let dachshund = [{x: 5, y: 10}];
 let food = generateFood();
 let direction = 'right';
 let gameInterval;
 let score = 0;
+let gridSize = getSizeBoard();
+let touchStartX = 0;
+let touchStartY = 0;
+
+function getBoardSize() {
+    return window.innerWidth > 768 ? 20 : 15;
+}
 
 //1. Initialise Board 
 function createGameBoard() {
+    gridSize = getBoardSize(); //update grid size
     board.innerHTML= ''; //clear previous content
     board.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
     board.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
@@ -18,6 +25,14 @@ function createGameBoard() {
     for (let i =0; i < gridSize * gridSize; i++) {
         const cell = document.createElement('div');
         board.appendChild(cell);
+    }
+}
+
+// handle window resize
+function handleResize() {
+    const newSize = getBoardSize();
+    if (newSize !== gridSize) {
+        initGame();
     }
 }
 
@@ -107,10 +122,10 @@ function draw() {
     }
 
     // Draw dachshund
-    dachshund.forEach(segment => {
-        const index = segment.y * gridSize + segment.x;
-        if (index >= 0 && index < cells.length) {
-            cells[index].classList.add('dachshund');
+    dachshund.forEach((segment, index) => {
+        const cellIndex = segment.y * gridSize + segment.x;
+        if (cellIndex >= 0 && cellIndex < cells.length) {
+            cells[cellIndex].classList.add('dachshund');
             if (index === 0) cells[cellIndex].classList.add('head');
         }
     });
@@ -145,24 +160,28 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// mobile controls
-function initMobileControls() {
-    const directions = {
-        up: () => direction !== 'down' && (direction = 'up'),
-        down: () => direction !== 'up' && (direction = 'down'),
-        left: () => direction !== 'right' && (direction = 'left'),
-        right: () => direction !== 'left' && (direction = 'right')
-    };
+// touch controls
+board.addEventListener('touchstart', (e) => {
+    const touch = e.touches[0];
+    touchStartX = touch.clientX;
+    touchStartY = touch.clientY;
+    e.preventDefault();
+}, { passive: false });
 
-    Object.keys(directions).forEach(dir => {
-        const btn = document.querySelector(`.${dir}`);
-        btn.addEventListener('touchstart', (e) => {
-            e.preventDefault();
-            directions[dir]();
-        });
-        btn.addEventListener('click', directions[dir]);
-    });
-}
+board.addEventListener('touchmove', (e) => {
+    const touch = e.touches[0];
+    const dx = touch.clientX - touchStartX;
+    const dy = touch.clientY - touchStartY;
+    
+    if (Math.abs(dx) > Math.abs(dy)) {
+        if (dx > 50 && direction !== 'left') direction = 'right';
+        else if (dx < -50 && direction !== 'right') direction = 'left';
+    } else {
+        if (dy > 50 && direction !== 'up') direction = 'down';
+        else if (dy < -50 && direction !== 'down') direction = 'up';
+    }
+    e.preventDefault();
+}, { passive: false });
 
 // Initialise Game
 function initGame() {
@@ -172,7 +191,6 @@ function initGame() {
     direction = 'right';
     score = 0;
     document.getElementById('score').textContent = `Score: ${score}`;
-    initMobileControls();
     
     if (gameInterval) clearInterval(gameInterval);
     gameInterval = setInterval(gameLoop, 200);  
@@ -193,6 +211,7 @@ function gameLoop() {
 
 // Start the game
 window.addEventListener('DOMContentLoaded', initGame);
+window.addEventListener('resize', handleResize);
 document.getElementById('restart-btn').addEventListener('click', initGame);
 
 // Restart button
