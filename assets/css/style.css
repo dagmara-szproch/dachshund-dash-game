@@ -67,6 +67,7 @@ body {
     padding: 10px;
     color: #F1E9D2;
     background-color: rgba(0, 0, 0, 0.6);
+    margin-top: auto; /* Pushes footer to bottom */
   }
   
   .game-footer a {
