@@ -94,7 +94,7 @@ function checkCollision() {
     return false // no collision
 }
 
-// function 
+// function generate with AI help
 function generateFood() {
     let newFood;
     let isPositionValid = false;
@@ -113,6 +113,7 @@ function generateFood() {
     return newFood
 }
 
+// function generate with AI help
 function draw() {
     const cells = board.children;
 
@@ -160,7 +161,7 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// touch controls
+// touch controls - function generated with AI help
 const gameContainer = document.getElementById('game-main');
 gameContainer.addEventListener('touchstart', (e) => {
     const touch = e.touches[0];
@@ -218,4 +219,15 @@ function gameLoop() {
 // Start the game
 window.addEventListener('DOMContentLoaded', initGame);
 window.addEventListener('resize', handleResize);
-document.getElementById('restart-btn').addEventListener('click', initGame);
+
+const restartBtn = document.getElementById('restart-btn');
+// Handle both click and touch events
+restartBtn.addEventListener('click', handleRestart);
+restartBtn.addEventListener('touchend', handleRestart);
+
+// function generate with AI help
+function handleRestart(e) {
+    e.stopPropagation(); //  Critical! Prevents swipe events from triggering
+    e.preventDefault();  //  Prevents ghost clicks on mobile
+    initGame();
+}
