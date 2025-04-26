@@ -10,8 +10,16 @@ body {
     display: flex;
     flex-direction: column;
   }
-  
-  /* Header */
+
+/* Main Content Area */
+#game-main {
+    flex: 1; /* This makes it grow to push footer down */
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Header */
   .game-header {
     background-color: rgba(0, 0, 0, 0.6);
     color: #F1E9D2;
@@ -68,6 +76,7 @@ body {
     color: #F1E9D2;
     background-color: rgba(0, 0, 0, 0.6);
     margin-top: auto; /* Pushes footer to bottom */
+    width: 100%;
   }
   
   .game-footer a {
@@ -88,4 +97,5 @@ body {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-  }
+  }  
+  
