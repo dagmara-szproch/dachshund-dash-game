@@ -2,12 +2,12 @@
 
 // Core Game Variables
 const board = document.getElementById('game-board');
-let dachshund = [{x: 5, y: 10}];
-let food = generateFood();
+let dachshund;
+let food;
 let direction = 'right';
 let gameInterval;
 let score = 0;
-let gridSize = getBoardSize();
+let gridSize;
 let touchStartX = 0;
 let touchStartY = 0;
 
@@ -70,7 +70,7 @@ function moveDachshund() {
         score++;
         document.getElementById('score').textContent = `Score: ${score}`;
     } else {
-    dachshund.pop();  // remove the last element of the array (tail\)
+        dachshund.pop();  // remove the last element of the array (tail\)
     }
 }
 
@@ -185,6 +185,7 @@ board.addEventListener('touchmove', (e) => {
 
 // Initialise Game
 function initGame() {
+    gridSize = getBoardSize();
     createGameBoard();
     dachshund = [{x: 5, y: 10}];
     food = generateFood();
