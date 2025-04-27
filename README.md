@@ -280,6 +280,8 @@ In the next step, I could add some text for players, such as: "Please rotate you
 
 ![CSS Checker - w3 validator - style.css](docs/testing/css-w3.png)
 
+![jHint validation - pass](docs/testing/jHint-validation.png)
+
 ### Accessibility
 
 ## Deployment
