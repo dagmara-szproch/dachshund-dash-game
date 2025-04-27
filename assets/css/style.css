@@ -66,7 +66,7 @@ body {
     height: 80vmin;
     max-width: 600px;
     max-height: 600px;
-    border: 2px solid var(--food-red);
+    border: 2px solid var(--brown);
     background-color: var(--cream);
     touch-action: none;
     overflow: hidden;
@@ -77,11 +77,16 @@ body {
     display: none; /* Hidden by default */
     background-color: var(--overlay-cream); /* Semi-transparent cream */
     height: 20vh;
-    width: 90%;
+    width: 75%;
     max-width: 600px;
-    margin: 0 auto;
-    border: 2px solid var(--food-red);
+    margin: 10px auto;
+    border: 2px solid var(--brown);
     touch-action: none;
+    color: #555;
+    padding: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
 }
 
 /* Snake & Food */
@@ -140,7 +145,9 @@ body {
   }
 
   #swipe-area {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .game-header {
