@@ -70,6 +70,9 @@ The project's **Kanban Board** can be viewd [here](https://github.com/users/dagm
 ### Design Choices
 
 #### Colour Scheme
+
+![colour scheme](docs/dachshund-colour-palette.png)
+
 The colour choices were made with clarity, contrast, and a playful tone in mind:
 
 - Header and footer: rgba(0, 0, 0, 0.6) provides a slightly transparent, dark overlay that makes the text and icons stand out without being too harsh.
@@ -185,6 +188,26 @@ To achieve this, I will implement the following functions and components:
 
 ## Features
 
+- Responsive Design
+
+Playable on both desktop and mobile devices, with swipe controls for mobile and keyboard controls for desktop.
+
+- Game Over Screen
+
+Displays your final score.
+
+- Touch-Friendly Swipe Area
+
+A dedicated swipe zone appears on mobile screens for smooth and intuitive gameplay.
+
+- Dynamic Board Size
+
+The grid automatically adjusts:
+
+20×20 for larger screens (desktops, laptops)
+
+15×15 for smaller screens (mobiles, tablets)
+
 ## Technologies and Tools Used
 
 - HTML, CSS and JavaScipt were used as the languages.
@@ -224,13 +247,19 @@ Additionally, the draw() function was incorporated to update the game's visual e
 
 ## Testing
 
-
-
 ### Bugs
+
+![Bugs found](docs/bugs-found.png)
 
 ### Unresolved Bugs
 
+Known Issues
+
+The game is not fully optimised for landscape orientation on mobile devices. Due to limited screen height in landscape mode, there isn't sufficient space to properly display the game board, swipe area, and controls. As a result, gameplay is recommended in portrait mode for the best experience.
+
 ### Testing User Stories
+
+![User Stories Testing](docs/user-story-test.png)
 
 ### Manual Testing
 
@@ -307,11 +336,40 @@ The website was deployed using GitHub Pages, which provides a simple way to host
 
 ## Maintenance & Updates
 
+While the core version of Dachshund Dash is fully playable, there are several planned enhancements that were not yet implemented due to time constraints. These ideas aim to improve gameplay, design, and user experience:
+
+- Game Menus and Controls
+
+  - Add a start screen, pause functionality, and more polished game over screen.
+
+  - Integrate sound effects (e.g., eating food, game over) and background music.
+
+  - Introduce difficulty settings (Easy/Hard) with adjustable game speed.
+
+  - Properly connect header buttons (e.g., sound/music toggles) into the game flow.
+
+- Visual Enhancements — Dachshund Theme
+
+  - Replace simple snake blocks with dachshund body parts (head, body, tail) for a more charming appearance.
+
+  - Implement image rotation based on movement direction for smoother turns.
+
+  - Use a bone emoji or custom bone image as the food item.
+
+  - Fine-tune image sizes to fit the game grid seamlessly
+
+- Responsive Design and Accessibility
+
+  - Further polish responsiveness for a wide range of screen sizes.
+
+  - Improve accessibility with better colour contrast and full keyboard support.
+
 ## Credits
 
-### Content
+The dachshund illustrations (background and favicon) were created by BiancaVanDijk and sourced from Pixabay.
 
-### Media
-
+![Dachshund illustration](assets/images/favicon/favicon-32x32.png)
 - [Dachshund Drawing](https://pixabay.com/illustrations/dachshund-dog-animal-pet-drawing-8707181/)
 - [Dachshund Drawing](https://pixabay.com/illustrations/dachshund-dog-animal-pet-drawing-8707182/)
+
+Styling support and some content assistance were provided by ChatGPT.
