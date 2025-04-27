@@ -197,9 +197,30 @@ To achieve this, I will implement the following functions and components:
 - [HTML Validator](https://validator.w3.org/) Markup Validation Service
 - Lighthouse Chrome Dev Tools for testing.
 - [GitHub](https://github.com/) to store my project and the project board.
+- [Git](https://git-scm.com/) for version control.
 - [Am I responsive](https://ui.dev/amiresponsive) for mock ups.
 
 ## Code
+
+Before I started coding (in fact, even before completing the module), I watched several YouTube tutorials, which gave me my first impressions of the classic Snake game.
+Over the following week or two, the idea for my dachshund-themed version gradually took shape.
+
+Throughout the planning stage, I frequently consulted ChatGPT to check whether certain solutions were possible in JavaScript, or whether there were alternative approaches to those presented in the tutorials.
+
+However, when I began the actual coding process, it became clear that implementing my original idea was more challenging than I had initially expected.
+In particular, creating on-screen control buttons for mobile devices (where responsiveness was essential) proved too complex within the time available. As a result, I decided — at the last moment — to switch to a swipe-based control system.
+
+To achieve the desired behaviour, I used AI assistance to help design and generate a function that handles the touchstart and touchmove event listeners effectively.
+I also relied on AI support to validate my generateFood function, ensuring that food would not be placed on any existing dachshund segments.
+Additionally, the draw() function was incorporated to update the game's visual elements.
+
+- [How to code snake game in JavaScript](https://www.youtube.com/watch?v=baBq5GAL0_U)
+- [Coding Snake in JavaScript](https://www.youtube.com/watch?v=7Azlj0f9vas&t=874s)
+- [Beginner JavaScript Project – Snake Game Tutorial](https://www.youtube.com/watch?v=uyhzCBEGaBY&t=1896s)
+- [A game of Snake written in JavaScript](https://www.youtube.com/watch?v=Je0B3nHhKmM&t=973s)
+- [How To Code The Snake Game In Javascript](https://www.youtube.com/watch?v=QTcIXok9wNY)
+- [Documentation regarding touch events](https://developer.mozilla.org/en-US/docs/Web/API/Touch_events)
+
 
 ## Testing
 
@@ -231,7 +252,7 @@ The only remaining issue is that the footer does not stick perfectly to the bott
 
 #### Stage 2 and 3 Testing
 
-During the next stage, 2a, I improved the style of my game. I added a background image, fixed the footer so that it remains at the bottom, and improved the design for mobile devices.
+During the next stage, I improved the style of my game. I added a background image, fixed the footer so that it remains at the bottom, and improved the design for mobile devices.
 I also corrected the layout for laptops with smaller screen heights; previously, it was impossible to see the header (with buttons and scores) and the game board at the same time, which made for a very poor user experience.
 
 Additionally, I redesigned the swipe area. Initially, the JavaScript function wasn’t working properly — when the game was not running, I couldn't swipe up or down, meaning it was almost impossible to access the footer. In fact, I could do it only by swiping in a very specific spot (the header area), which was not intuitive at all.
@@ -241,7 +262,7 @@ This swiping feature is designed specifically for mobile devices (screen width l
 I am still a bit confused about larger devices like tablets, where there is no keyboard. I can't physically test the game on such devices because I do not own one.
 I am aware there is still a bug when mobiles are in landscape orientation; I am leaving that for future improvement, as I currently do not know how to resolve it.
 
-In the next step, I plan to add some text for players, such as: "Please rotate your device back to portrait mode for the best experience!"
+In the next step, I could add some text for players, such as: "Please rotate your device back to portrait mode for the best experience!"
 
 ### Automated Testing
 
