@@ -8,6 +8,7 @@
     --food-red: #ff6347;
     --head-dark: #555;
     --overlay-black: rgba(0, 0, 0, 0.6);
+    --overlay-cream: rgba(241, 233, 210, 0.6);
 }
 
 /* Base Styles */
@@ -65,10 +66,22 @@ body {
     height: 80vmin;
     max-width: 600px;
     max-height: 600px;
-    border: 2px solid var(--brown);
+    border: 2px solid var(--food-red);
     background-color: var(--cream);
     touch-action: none;
     overflow: hidden;
+}
+
+/* Swipe area */
+#swipe-area {
+    display: none; /* Hidden by default */
+    background-color: var(--overlay-cream); /* Semi-transparent cream */
+    height: 20vh;
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    border: 2px solid var(--food-red);
+    touch-action: none;
 }
 
 /* Snake & Food */
@@ -108,8 +121,8 @@ body {
 /* Restart Button */
 .restart-btn {
     padding: 6px 12px;
-    background: var(--brown);
-    color: var(--cream);
+    background: var(--food-red);
+    color: var(--dark-dachshund);
     border: none;
     border-radius: 6px;
     cursor: pointer;
@@ -124,6 +137,10 @@ body {
 
   #game-board {
     margin-top: 15px;
+  }
+
+  #swipe-area {
+    display: block;
   }
 
   .game-header {

@@ -162,7 +162,7 @@ document.addEventListener('keydown', (e) => {
 });
 
 // touch controls - function generated with AI help
-const gameContainer = document.getElementById('game-main');
+const gameContainer = document.getElementById('swipe-area');
 gameContainer.addEventListener('touchstart', (e) => {
     const touch = e.touches[0];
     touchStartX = touch.clientX;
