@@ -9,14 +9,20 @@
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
     <!-- CSS -->
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <style>
+        /* Inline fallback if CSS fails to load */
+        body { background: #222; text-align: center; padding: 2rem; }
+        .error-container { background: #F1E9D2; padding: 2rem; }
+      </style>
 </head>
 <body class="error-page">
     <div class="error-container">
         <h1>404 - Oops!</h1>
         <p>I stretched too much and got lost...</p>
-        <img src="assets/images/dachshund-404page.jpg" alt="Long dachshund illustration" class="error-image">
-        <a href="https://dagmara-szproch.github.io/dachshund-dash-game/" class="fetch-link">Click here and I'll fetch the game!</a>
+        <img src="/assets/images/dachshund-404page.jpg" alt="Long dachshund illustration" class="error-image">
+        <a href="index.html" class="fetch-link">Click here and I'll fetch the game!</a>
     </div>
+    <script src="/assets/js/game.js"></script>
 </body>
 </html>
