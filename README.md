@@ -1,5 +1,5 @@
-# team2-imposter-quiz
-[View the Live Project here]()
+# Dachshund Dash
+[View the Live Project here](https://github.com/dagmara-szproch/dachshund-dash-game)
 
 # Table of Content
 - [User Expeience](#user-experience)
@@ -100,7 +100,7 @@ These illustrations add a warm and friendly aesthetic that supports the theme of
 
 ### Wireframes
 
-![game wireframe](/dachshund-dash-game/docs/game-wireframe.png)
+![game wireframe](/docs/game-wireframe.png)
 
 ## Game Logic
 
@@ -222,6 +222,25 @@ The only remaining issue is that the footer does not stick perfectly to the bott
 ### Accessibility
 
 ## Deployment
+
+The website was deployed using GitHub Pages, which provides a simple way to host static websites directly from a GitHub repository. Below are the steps taken to deploy the project:
+
+1. Repository Setup
+- The project files were uploaded to a GitHub repository.
+- The main branch was used for deployment.
+
+2. Enabling GitHub Pages
+- In the repository settings, GitHub Pages was enabled.
+- The source branch was set to main.
+- The deployment was configured to serve files from the root directory.
+3. Accessing the Live Website
+- Once the deployment process was completed, the website became accessible at the provided GitHub Pages URL.
+- The link to the deployed site: https://github.com/dagmara-szproch/dachshund-dash-game
+
+4. Updating the Website
+- Any changes pushed to the main branch automatically update the live website.
+- Regular updates are made using Git commits and pushes.
+
 
 ## Maintenance & Updates
 
