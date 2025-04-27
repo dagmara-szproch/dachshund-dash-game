@@ -134,6 +134,31 @@ body {
     font-size: 1em;
 }
 
+/* Game Over Screen Styles */
+#game-over-screen {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+#game-over-screen.visible {
+  display: flex;
+}
+
+.game-over-content {
+  background: var(--cream);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 2px solid var(--brown);
+}
+
 @media (max-width: 768px) {
   #game-main {
     justify-content: flex-start;

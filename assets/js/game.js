@@ -138,6 +138,18 @@ function draw() {
     }
 }
 
+function showGameOver() {
+    document.getElementById('final-score').textContent = score;
+    const screen = document.getElementById('game-over-screen');
+    
+    // Show screen
+    screen.classList.add('visible');
+    
+    // Hide when clicked or any key pressed
+    const hide = () => screen.classList.remove('visible');
+    screen.onclick = hide;
+    document.onkeydown = hide;
+}
 
 // 3. Keyboard Controls - eventListener. This () also prevent opposite direction changes
 document.addEventListener('keydown', (e) => {
@@ -209,7 +221,7 @@ function gameLoop() {
 
     if (checkCollision()) {
         clearInterval(gameInterval);
-        alert(`Game Over! Score: ${score}`);
+        showGameOver();
         return
     }
 
