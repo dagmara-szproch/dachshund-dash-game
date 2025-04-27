@@ -1,5 +1,5 @@
 # Dachshund Dash
-[View the Live Project here](https://github.com/dagmara-szproch/dachshund-dash-game)
+View the Live Project [here](https://dagmara-szproch.github.io/dachshund-dash-game/)
 
 # Table of Content
 - [User Expeience](#user-experience)
@@ -187,6 +187,18 @@ To achieve this, I will implement the following functions and components:
 
 ## Technologies and Tools Used
 
+- HTML, CSS and JavaScipt were used as the languages.
+- [Font Awesome](https://fontawesome.com/) to incorporate icons.
+- [Google Fonts](https://fonts.google.com/) to import fonts.
+- [Birme](https://www.birme.net/) to resize, compress and change the image format to WEBP.
+- [Pixabay](https://pixabay.com/) to downland the images for the background and favicons.
+- [Open AI](https://openai.com/chatgpt/overview/) to review the content for spelling, grammar and consistency and generate some function.
+- [CSS Validator](https://jigsaw.w3.org/css-validator/) to test style.css
+- [HTML Validator](https://validator.w3.org/) Markup Validation Service
+- Lighthouse Chrome Dev Tools for testing.
+- [GitHub](https://github.com/) to store my project and the project board.
+- [Am I responsive](https://ui.dev/amiresponsive) for mock ups.
+
 ## Code
 
 ## Testing
@@ -216,6 +228,20 @@ Another challenge arose when the restart button became sensitive to swipe gestur
 The only remaining issue is that the footer does not stick perfectly to the bottom of the screen. However, I have decided to leave styling improvements for Stage 3, where I will focus on making the game visually appealing.
 
 ![Stage 2 - Testing](docs/stage2-testing.png)
+
+#### Stage 2 and 3 Testing
+
+During the next stage, 2a, I improved the style of my game. I added a background image, fixed the footer so that it remains at the bottom, and improved the design for mobile devices.
+I also corrected the layout for laptops with smaller screen heights; previously, it was impossible to see the header (with buttons and scores) and the game board at the same time, which made for a very poor user experience.
+
+Additionally, I redesigned the swipe area. Initially, the JavaScript function wasn’t working properly — when the game was not running, I couldn't swipe up or down, meaning it was almost impossible to access the footer. In fact, I could do it only by swiping in a very specific spot (the header area), which was not intuitive at all.
+Now, the swipe area is positioned just below the game board, and I added a message saying "Swipe to Dash!" to inform players what to do.
+This swiping feature is designed specifically for mobile devices (screen width less than 768px).
+
+I am still a bit confused about larger devices like tablets, where there is no keyboard. I can't physically test the game on such devices because I do not own one.
+I am aware there is still a bug when mobiles are in landscape orientation; I am leaving that for future improvement, as I currently do not know how to resolve it.
+
+In the next step, I plan to add some text for players, such as: "Please rotate your device back to portrait mode for the best experience!"
 
 ### Automated Testing
 
