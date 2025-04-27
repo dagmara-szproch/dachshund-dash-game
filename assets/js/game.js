@@ -95,21 +95,22 @@ function checkCollision() {
 
 // function generate with AI help
 function generateFood() {
-    let newFood;
-    let isPositionValid = false;
-    while (!isPositionValid) {
-        // 1. Generate position 
-        newFood = {
-            x: Math.floor(Math.random() * gridSize),
-            y: Math.floor(Math.random() * gridSize)
-        };
-
-        // ensure food not on snake segment
-        isPositionValid = !dachshund.some(segment => 
-            segment.x === newFood.x && segment.y === newFood.y);
+    // Generate all possible positions first
+    const allPositions = [];
+    for (let x = 0; x < gridSize; x++) {
+        for (let y = 0; y < gridSize; y++) {
+            allPositions.push({x, y});
+        }
     }
 
-    return newFood;
+    // Filter out positions occupied by the dachshund
+    const validPositions = allPositions.filter(pos => 
+        !dachshund.some(segment => 
+            segment.x === pos.x && segment.y === pos.y)
+    );
+
+    // Return random valid position
+    return validPositions[Math.floor(Math.random() * validPositions.length)];
 }
 
 // function generate with AI help
