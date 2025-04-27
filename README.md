@@ -1,4 +1,7 @@
 # Dachshund Dash
+
+![Am I responsive?](docs/am-i-responsive.png)
+
 View the Live Project [here](https://dagmara-szproch.github.io/dachshund-dash-game/)
 
 # Table of Content
