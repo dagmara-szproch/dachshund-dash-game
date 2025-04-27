@@ -80,7 +80,6 @@ function checkCollision() {
 
     // wall collison check
     if (head.x < 0 || head.x >= gridSize || head.y < 0 || head.y >= gridSize) {
-        console.log('Wall collision');
         return true;
     }
 
