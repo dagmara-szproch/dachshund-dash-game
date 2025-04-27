@@ -193,6 +193,7 @@ body.error-page {
   margin-bottom: 1.5rem;
 }
 
+/* 404 Page and About Page link style*/
 .fetch-link {
   display: inline-block;
   padding: 10px 20px;
@@ -207,6 +208,22 @@ body.error-page {
 .fetch-link:hover {
   background-color: var(--brown);
   color: var(--cream);
+}
+
+/* About Page */
+.about-container {
+  background-color: var(--cream);
+  border: 2px solid var(--brown);
+  padding: 20px;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 800px;
+  border-radius: 12px;
+  color: var(--dark-dachshund);
+}
+
+.about-container h2 {
+  margin-top: 1rem;
 }
 
 @media (max-width: 768px) {
