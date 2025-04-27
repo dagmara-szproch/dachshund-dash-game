@@ -269,6 +269,17 @@ In the next step, I could add some text for players, such as: "Please rotate you
 
 ### Automated Testing
 
+![Lighthouse - mobile - index.html](docs/testing/index-mobile.png)
+![Lighthouse - desktop - index.html](docs/testing/index-desktop.png)
+![Lighthouse - mobile - about.html](docs/testing/about-mobile.png)
+![Lighthousw - desktop - about.html](docs/testing/about-desktop.png)
+
+![Html Checker - w3 validator - index.html](docs/testing/index-w3.png)
+![Html Checker - w3 validator - about.html](docs/testing/about-w3.png)
+![Html Checker - w3 validator - 404.html](docs/testing/404-w3.png)
+
+![CSS Checker - w3 validator - style.css](docs/testing/css-w3.png)
+
 ### Accessibility
 
 ## Deployment
