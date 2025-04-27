@@ -1,5 +1,5 @@
-// console.log('Hello');
-
+/* jshint esversion: 6, browser: true, devel: true, jquery: false */
+/* globals document, window */
 // Core Game Variables
 const board = document.getElementById('game-board');
 let dachshund;
@@ -81,7 +81,7 @@ function checkCollision() {
     // wall collison check
     if (head.x < 0 || head.x >= gridSize || head.y < 0 || head.y >= gridSize) {
         console.log('Wall collision');
-        return true
+        return true;
     }
 
     // self collision
@@ -91,7 +91,7 @@ function checkCollision() {
             return true;
         }
     }
-    return false // no collision
+    return false; // no collision
 }
 
 // function generate with AI help
@@ -110,7 +110,7 @@ function generateFood() {
             segment.x === newFood.x && segment.y === newFood.y);
     }
 
-    return newFood
+    return newFood;
 }
 
 // function generate with AI help
@@ -222,7 +222,7 @@ function gameLoop() {
     if (checkCollision()) {
         clearInterval(gameInterval);
         showGameOver();
-        return
+        return;
     }
 
     draw();
