@@ -12,6 +12,7 @@
 
 /* Base Styles */
 body {
+    background: url('../images/background.webp') no-repeat center center/cover;
     margin: 0;
     font-family: 'Barriecito', cursive, sans-serif;
     text-align: center;
@@ -73,6 +74,7 @@ body {
 /* Snake & Food */
 .dachshund {
     background-color: var(--dark-dachshund);
+    border-radius: 4px;
 }
 
 .food {
@@ -99,6 +101,10 @@ body {
     text-decoration: none;
 }
 
+.game-footer a:hover {
+  text-decoration: underline;
+}
+
 /* Restart Button */
 .restart-btn {
     padding: 6px 12px;
@@ -108,4 +114,26 @@ body {
     border-radius: 6px;
     cursor: pointer;
     font-size: 1em;
+}
+
+@media (max-width: 768px) {
+  #game-main {
+    justify-content: flex-start;
+    padding-top: 10px;
+  }
+
+  #game-board {
+    margin-top: 15px;
+  }
+
+  .game-header {
+    width: 90%;
+    padding: 5px;
+    margin: 10px auto;
+    height: 10vh;
+  }
+
+  .restart-btn {
+    margin-top: 5px;
+  }
 }
