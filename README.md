@@ -314,6 +314,8 @@ In the next step, I could add some text for players, such as: "Please rotate you
 
 ![jHint validation - pass](docs/testing/jHint-validation.png)
 
+![Broken Links - all valid anchors](docs/testing/anchors-w3.png)
+
 ### Accessibility
 
 ## Deployment
