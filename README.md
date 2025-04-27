@@ -264,6 +264,9 @@ I am aware there is still a bug when mobiles are in landscape orientation; I am 
 
 In the next step, I could add some text for players, such as: "Please rotate your device back to portrait mode for the best experience!"
 
+![Stage 3a Testing](docs/stage3a-testing.png)
+![Stage 3b Testing](docs/stage3b-testing.png)
+
 ### Automated Testing
 
 ### Accessibility
