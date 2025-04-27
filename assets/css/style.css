@@ -159,6 +159,56 @@ body {
   border: 2px solid var(--brown);
 }
 
+/* 404 Page Styles */
+body.error-page {
+  background: var(--dark-dachshund);
+}
+
+.error-container {
+  background-color: var(--overlay-cream);
+  border: 2px solid var(--brown);
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 500px;
+  width: 90%;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.error-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--brown);
+}
+
+.error-container p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.error-image {
+  width: 80%;
+  max-width: 300px;
+  height: auto;
+  margin-bottom: 1.5rem;
+}
+
+.fetch-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--food-red);
+  color: var(--dark-dachshund);
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+}
+
+.fetch-link:hover {
+  background-color: var(--brown);
+  color: var(--cream);
+}
+
 @media (max-width: 768px) {
   #game-main {
     justify-content: flex-start;
