@@ -318,6 +318,14 @@ In the next step, I could add some text for players, such as: "Please rotate you
 
 ### Accessibility
 
+- I used meaningful alt text for images.
+
+- I implemented semantic HTML elements such as header, main, and section for better structure and navigation.
+
+- I ensured that all clickable elements are proper button elements instead of div or span.
+
+- I maintained sufficient contrast between the background and content for readability.
+
 ## Deployment
 
 The website was deployed using GitHub Pages, which provides a simple way to host static websites directly from a GitHub repository. Below are the steps taken to deploy the project:
