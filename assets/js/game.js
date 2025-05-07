@@ -10,6 +10,11 @@ let score = 0;
 let gridSize;
 let touchStartX = 0;
 let touchStartY = 0;
+// detects if it is touch device from stack overflow
+const isTouchDevice = 'ontouchstart' in window ||
+                        navigator.maxTouchPoints > 0 ||
+                        navigator.msMaxTouchPoints > 0;
+
 
 function getBoardSize() {
     return window.innerWidth > 768 ? 20 : 15;
@@ -173,38 +178,46 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// touch controls - function generated with AI help
-const gameContainer = document.getElementById('swipe-area');
-gameContainer.addEventListener('touchstart', (e) => {
-    const touch = e.touches[0];
-    touchStartX = touch.clientX;
-    touchStartY = touch.clientY;
-    e.preventDefault();
-}, { passive: false });
+// touch controls (only if touch device detected) - function generated with AI help
+if (isTouchDevice) {
+    const swipeArea = document.getElementById('swipe-area');
+    swipeArea.style.display = 'flex';
 
-gameContainer.addEventListener('touchmove', (e) => {
-    if (!gameInterval) return; // Don't process if game isn't running
-    const touch = e.touches[0];
-    const dx = touch.clientX - touchStartX;
-    const dy = touch.clientY - touchStartY;
-    
-    // Only check if swipe is significant enough
-    if (Math.abs(dx) > 30 || Math.abs(dy) > 30) {
-        if (Math.abs(dx) > Math.abs(dy)) {
-            direction = dx > 0 && direction !== 'left' ? 'right' : 
-                      dx < 0 && direction !== 'right' ? 'left' : direction;
-        } else {
-            direction = dy > 0 && direction !== 'up' ? 'down' : 
-                      dy < 0 && direction !== 'down' ? 'up' : direction;
-        }
+    let touchStartX, touchStartY;
+
+    swipeArea.addEventListener('touchstart', (e) => {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
         e.preventDefault();
-    }
-}, { passive: false });
+    }, { passive: false });
+
+    swipeArea.addEventListener('touchmove', (e) => {
+        if (!touchStartX || !gameInterval) return;
+    
+        const touch = e.touches[0];
+        const dx = touch.clientX - touchStartX;
+        const dy = touch.clientY - touchStartY;
+        const threshold = 30; //minimum swioe distance px
+
+        if (Math.abs(dx) > threshold || Math.abs(dy) > threshold) {
+            if (Math.abs(dx) > Math.abs(dy)) {
+              // Horizontal swipe
+              direction = dx > 0 && direction !== 'left' ? 'right' : 
+                         dx < 0 && direction !== 'right' ? 'left' : direction;
+            } else {
+              // Vertical swipe
+              direction = dy > 0 && direction !== 'up' ? 'down' : 
+                         dy < 0 && direction !== 'down' ? 'up' : direction;
+            }
+            touchStartX = null; // Reset to prevent multi-triggers
+            e.preventDefault();
+          }
+        }, { passive: false });
+}
 
 // Initialise Game
 function initGame() {
     gridSize = getBoardSize();
-    createGameBoard();
     dachshund = [{x: 5, y: 10}];
     food = generateFood();
     direction = 'right';
@@ -212,7 +225,16 @@ function initGame() {
     document.getElementById('score').textContent = `Score: ${score}`;
     
     if (gameInterval) clearInterval(gameInterval);
-    gameInterval = setInterval(gameLoop, 200);  
+
+    createGameBoard();
+
+    if (isTouchDevice) {
+        document.getElementById('swipe-area').style.display = 'flex';
+      } else {
+        swipeArea.style.display = 'none';
+      }
+
+    gameInterval = setInterval(gameLoop, 200);
 }
 
 // 4. Game Loop
