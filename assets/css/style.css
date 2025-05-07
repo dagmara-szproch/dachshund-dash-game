@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Barriecito&display=swap');
 
+/* Global settings */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 /* Root Variables */
 :root {
     --cream: #F1E9D2;
@@ -14,19 +21,20 @@
 /* Base Styles */
 body {
     background: url('../images/background.webp') no-repeat center center/cover;
-    margin: 0;
+    background-color: #222;
     font-family: 'Barriecito', cursive, sans-serif;
     text-align: center;
     background-color: var(--cream);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    /* prevent horizontal scrolling*/
+    overflow-x: hidden;
 }
 
 /* Header */
 .game-header {
-    height: 10vmin;
-    min-height: 50px;
+    height: 80px;
     background-color: var(--overlay-black);
     color: var(--cream);
     display: flex;
@@ -34,6 +42,8 @@ body {
     justify-content: center;
     align-items: center;
     padding: 5px 10px;
+    position: relative;
+    z-index: 10;
 }
 
 .game-header h1 {
@@ -57,28 +67,26 @@ body {
     align-items: center;
     justify-content: center;
     padding: 10px 0;
+    width: 100%;
 }
 
 /* Game Board */
 #game-board {
     display: grid;
-    width: 80vmin;
-    height: 80vmin;
-    max-width: 600px;
-    max-height: 600px;
+    width: min(75vmin, 600px);
+    height: min(75vmin, 600px);
     border: 2px solid var(--brown);
     background-color: var(--cream);
     touch-action: none;
     overflow: hidden;
 }
 
-/* Swipe area */
+/* Swipe area - mobile only*/
 #swipe-area {
     display: none; /* Hidden by default */
     background-color: var(--overlay-cream); /* Semi-transparent cream */
-    height: 20vh;
-    width: 75%;
-    max-width: 600px;
+    height: 120px;
+    width: min(75vmin, 600px);
     margin: 10px auto;
     border: 2px solid var(--brown);
     touch-action: none;
@@ -87,6 +95,9 @@ body {
     font-size: 1.2em;
     font-weight: bold;
     text-align: center;
+    justify-content: center;
+    align-items: center;
+    width:  min(90vmin, 400px);
 }
 
 /* Snake & Food */
@@ -111,6 +122,8 @@ body {
     background-color: var(--overlay-black);
     width: 100%;
     text-align: center;
+    position: relative;
+    z-index: 10;
 }
 
 .game-footer a {
@@ -157,6 +170,7 @@ body {
   padding: 2rem;
   border-radius: 12px;
   border: 2px solid var(--brown);
+  max-width: 90%;
 }
 
 /* 404 Page Styles */
@@ -226,6 +240,9 @@ body.error-page {
   margin-top: 1rem;
 }
 
+/* media queries */
+
+/* mobile devices < 768px */
 @media (max-width: 768px) {
   #game-main {
     justify-content: flex-start;
@@ -233,23 +250,29 @@ body.error-page {
   }
 
   #game-board {
+    width: min(90vmin, 400px);
+    height: min(90vmin, 400px);
     margin-top: 15px;
   }
 
-  #swipe-area {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
   .game-header {
-    width: 90%;
-    padding: 5px;
-    margin: 10px auto;
-    height: 10vh;
+    height: auto;
+    min-width: 80px;
+    padding: 10px;
   }
 
-  .restart-btn {
-    margin-top: 5px;
+  /* disable mobile browsers' automatic text inflation */
+  body {
+  text-size-adjust: none;
+  /* for Safari/iOS */
+  -webkit-text-size-adjust: none;
+  }
+
+}
+
+/* larger swipe area for larger device*/
+@media (min-width: 769px) {
+  #swipe-area {
+    height: 150px;
   }
 }
