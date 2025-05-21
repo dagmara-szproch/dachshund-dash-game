@@ -10,6 +10,7 @@ let score = 0;
 let gridSize;
 let touchStartX = 0;
 let touchStartY = 0;
+const swipeArea = document.getElementById('swipe-area');
 // detects if it is touch device from stack overflow
 const isTouchDevice = 'ontouchstart' in window ||
                         navigator.maxTouchPoints > 0 ||
@@ -180,9 +181,6 @@ document.addEventListener('keydown', (e) => {
 
 // touch controls (only if touch device detected) - function generated with AI help
 if (isTouchDevice) {
-    const swipeArea = document.getElementById('swipe-area');
-    swipeArea.style.display = 'flex';
-
     let touchStartX, touchStartY;
 
     swipeArea.addEventListener('touchstart', (e) => {
@@ -229,7 +227,7 @@ function initGame() {
     createGameBoard();
 
     if (isTouchDevice) {
-        document.getElementById('swipe-area').style.display = 'flex';
+        swipeArea.style.display = 'flex';
       } else {
         swipeArea.style.display = 'none';
       }
