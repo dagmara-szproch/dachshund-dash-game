@@ -81,12 +81,11 @@ body {
     overflow: hidden;
 }
 
-/* Swipe area - mobile only*/
+/* Swipe area - when the keayboard is undetected*/
 #swipe-area {
     display: none; /* Hidden by default */
     background-color: var(--overlay-cream); /* Semi-transparent cream */
     height: 150px;
-    width: min(75vmin, 600px);
     margin: 10px auto;
     border: 2px solid var(--brown);
     touch-action: none;
@@ -97,7 +96,7 @@ body {
     text-align: center;
     justify-content: center;
     align-items: center;
-    width:  min(90vmin, 400px);
+    width:  min(90vmin, 600px);
 }
 
 /* Snake & Food */
