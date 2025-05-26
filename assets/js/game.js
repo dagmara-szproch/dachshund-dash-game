@@ -249,7 +249,23 @@ function gameLoop() {
 }
 
 // Start the game
-window.addEventListener('DOMContentLoaded', initGame);
 window.addEventListener('resize', handleResize);
 
 document.getElementById('restart-btn').addEventListener('click', initGame);
+
+// add start screen once in the beginning
+window.addEventListener('load', () => {
+    const startScreen = document.getElementById('start-screen');
+
+    const hideStartScreen = () => {
+        startScreen.classList.remove('visible');
+        document.removeEventListener('keydown', hideStartScreen);
+        startScreen.removeEventListener('click', hideStartScreen);
+        // the game starts after the screen is dismissed
+        initGame();
+    };
+
+    // Hide screen when any key is pressed or tap
+    document.addEventListener('keydown', hideStartScreen);
+    startScreen.addEventListener('click', hideStartScreen);
+});
