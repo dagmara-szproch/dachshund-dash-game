@@ -17,7 +17,7 @@ View the Live Project [here](https://dagmara-szproch.github.io/dachshund-dash-ga
 - [Testing](#testing)
     - [Bugs](#bugs)
     - [Unresolved Bugs](#unresolved-bugs)
-    - [Tesing User Stories](#testing-user-stories)
+    - [Testing User Stories](#testing-user-stories)
     - [Manual Testing](#manual-testing)
     - [Automated Testing](#automated-testing)
     - [Accessibility](#accessibility)
