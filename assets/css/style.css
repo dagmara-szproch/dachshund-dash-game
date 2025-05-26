@@ -136,7 +136,8 @@ body {
 }
 
 /* Restart Button */
-.restart-btn {
+#restart-btn {
+  font-family: 'Barriecito', cursive, sans-serif;;
     padding: 6px 12px;
     background: var(--food-red);
     color: var(--dark-dachshund);
@@ -146,8 +147,8 @@ body {
     font-size: 1em;
 }
 
-/* Game Over Screen Styles */
-#game-over-screen {
+/* Screens Styles - Start screen and Game Over screen*/
+.game-screen {
   display: none;
   position: fixed;
   top: 0;
@@ -160,16 +161,24 @@ body {
   justify-content: center;
 }
 
-#game-over-screen.visible {
+.game-screen.visible {
   display: flex;
 }
 
-.game-over-content {
+.screen-content {
   background: var(--cream);
   padding: 2rem;
   border-radius: 12px;
   border: 2px solid var(--brown);
   max-width: 90%;
+}
+
+ul {
+  list-style: none;
+}
+
+.fa-paw {
+  color: #ff6347;
 }
 
 /* 404 Page Styles */
