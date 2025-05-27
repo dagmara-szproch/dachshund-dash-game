@@ -262,7 +262,6 @@ function gameLoop() {
 
 // Start the game
 window.addEventListener('DOMContentLoaded', () => {
-    initGame();
     
     // Add dialog event listeners here
     openHelpButton.addEventListener('click', () => {
