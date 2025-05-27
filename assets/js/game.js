@@ -1,5 +1,3 @@
-/* jshint esversion: 6, browser: true, devel: true, jquery: false */
-/* globals document, window */
 // Core Game Variables
 const board = document.getElementById('game-board');
 let dachshund;
@@ -19,15 +17,6 @@ const closeHelpButton = document.getElementById('close-help-btn');
 const isTouchDevice = 'ontouchstart' in window ||
                         navigator.maxTouchPoints > 0 ||
                         navigator.msMaxTouchPoints > 0;
-
-// openHelpButton.addEventListener('click', () => {
-//     helpDialog.showModal();
-// });
-
-// closeHelpButton.addEventListener('click', () => {
-//     helpDialog.close();
-// });
-
 
 function getBoardSize() {
     return window.innerWidth > 768 ? 20 : 15;
@@ -263,9 +252,8 @@ function gameLoop() {
 // Start the game
 window.addEventListener('DOMContentLoaded', () => {
     
-    // Add dialog event listeners here
+    // Add dialog event listeners
     openHelpButton.addEventListener('click', () => {
-        console.log('opening dialog');
         helpDialog.showModal();
     });
 
