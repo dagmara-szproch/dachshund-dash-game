@@ -68,7 +68,7 @@ Business Objectives:
 - User Story 7:
   As a playful person, I want funny sound effects to make the game feel lively and entertaining.
 
-The project's **Kanban Board** can be viewd [here](https://github.com/users/dagmara-szproch/projects/7/views/2)
+The project's **Kanban Board** can be viewed [here](https://github.com/users/dagmara-szproch/projects/7/views/2)
 
 ### Design Choices
 
@@ -217,7 +217,7 @@ The grid automatically adjusts:
 - [Font Awesome](https://fontawesome.com/) to incorporate icons.
 - [Google Fonts](https://fonts.google.com/) to import fonts.
 - [Birme](https://www.birme.net/) to resize, compress and change the image format to WEBP.
-- [Pixabay](https://pixabay.com/) to downland the images for the background and favicons.
+- [Pixabay](https://pixabay.com/) to download the images for the background and favicons.
 - [Open AI](https://openai.com/chatgpt/overview/) to review the content for spelling, grammar and consistency and generate some function.
 - [CSS Validator](https://jigsaw.w3.org/css-validator/) to test style.css
 - [HTML Validator](https://validator.w3.org/) Markup Validation Service
@@ -246,6 +246,7 @@ Additionally, the draw() function was incorporated to update the game's visual e
 - [A game of Snake written in JavaScript](https://www.youtube.com/watch?v=Je0B3nHhKmM&t=973s)
 - [How To Code The Snake Game In Javascript](https://www.youtube.com/watch?v=QTcIXok9wNY)
 - [Documentation regarding touch events](https://developer.mozilla.org/en-US/docs/Web/API/Touch_events)
+- [How to make a popup modal](https://www.youtube.com/watch?v=TAB_v6yBXIE&t=82s)
 
 
 ## Testing
