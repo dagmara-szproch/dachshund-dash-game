@@ -11,10 +11,22 @@ let gridSize;
 let touchStartX = 0;
 let touchStartY = 0;
 const swipeArea = document.getElementById('swipe-area');
+// Dialog elements
+const helpDialog = document.getElementById('help-dialog');
+const openHelpButton = document.getElementById('open-help-btn');
+const closeHelpButton = document.getElementById('close-help-btn');
 // detects if it is touch device from stack overflow
 const isTouchDevice = 'ontouchstart' in window ||
                         navigator.maxTouchPoints > 0 ||
                         navigator.msMaxTouchPoints > 0;
+
+// openHelpButton.addEventListener('click', () => {
+//     helpDialog.showModal();
+// });
+
+// closeHelpButton.addEventListener('click', () => {
+//     helpDialog.close();
+// });
 
 
 function getBoardSize() {
@@ -249,23 +261,18 @@ function gameLoop() {
 }
 
 // Start the game
-window.addEventListener('resize', handleResize);
+window.addEventListener('DOMContentLoaded', () => {
+    initGame();
+    
+    // Add dialog event listeners here
+    openHelpButton.addEventListener('click', () => {
+        console.log('opening dialog');
+        helpDialog.showModal();
+    });
+
+    closeHelpButton.addEventListener('click', () => {
+        helpDialog.close();
+    });
+});
 
 document.getElementById('restart-btn').addEventListener('click', initGame);
-
-// add start screen once in the beginning
-window.addEventListener('load', () => {
-    const startScreen = document.getElementById('start-screen');
-
-    const hideStartScreen = () => {
-        startScreen.classList.remove('visible');
-        document.removeEventListener('keydown', hideStartScreen);
-        startScreen.removeEventListener('click', hideStartScreen);
-        // the game starts after the screen is dismissed
-        initGame();
-    };
-
-    // Hide screen when any key is pressed or tap
-    document.addEventListener('keydown', hideStartScreen);
-    startScreen.addEventListener('click', hideStartScreen);
-});
