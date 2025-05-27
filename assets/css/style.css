@@ -9,126 +9,126 @@
 
 /* Root Variables */
 :root {
-    --cream: #F1E9D2;
-    --brown: #8B5E3C;
-    --dark-dachshund: #222;
-    --food-red: #ff6347;
-    --head-dark: #555;
-    --overlay-black: rgba(0, 0, 0, 0.6);
-    --overlay-cream: rgba(241, 233, 210, 0.6);
+   --cream: #F1E9D2;
+  --brown: #8B5E3C;
+  --dark-dachshund: #222;
+  --food-red: #ff6347;
+  --head-dark: #555;
+  --overlay-black: rgba(0, 0, 0, 0.6);
+  --overlay-cream: rgba(241, 233, 210, 0.6);
 }
 
 /* Base Styles */
 body {
-    background: url('../images/background.webp') no-repeat center center/cover;
-    background-color: #222;
-    font-family: 'Barriecito', cursive, sans-serif;
-    text-align: center;
-    background-color: var(--cream);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    /* prevent horizontal scrolling*/
-    overflow-x: hidden;
+  background: url('../images/background.webp') no-repeat center center/cover;
+  background-color: #222;
+  font-family: 'Barriecito', cursive, sans-serif;
+  text-align: center;
+  background-color: var(--cream);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* prevent horizontal scrolling*/
+  overflow-x: hidden;
 }
 
 /* Header */
 .game-header {
-    height: 80px;
-    background-color: var(--overlay-black);
-    color: var(--cream);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 5px 10px;
-    position: relative;
-    z-index: 10;
+  height: 80px;
+  background-color: var(--overlay-black);
+  color: var(--cream);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 10px;
+  position: relative;
+  z-index: 10;
 }
 
 .game-header h1 {
-    margin: 0;
-    font-size: 1.8em;
+  margin: 0;
+  font-size: 1.8em;
 }
 
 .header-bottom {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 600px;
-    margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 600px;
+  margin-top: 5px;
 }
 
 /* Main Content */
 #game-main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 0;
-    width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+  width: 100%;
 }
 
 /* Game Board */
 #game-board {
-    display: grid;
-    width: min(75vmin, 600px);
-    height: min(75vmin, 600px);
-    border: 2px solid var(--brown);
-    background-color: var(--cream);
-    touch-action: none;
-    overflow: hidden;
+  display: grid;
+  width: min(75vmin, 600px);
+  height: min(75vmin, 600px);
+  border: 2px solid var(--brown);
+  background-color: var(--cream);
+  touch-action: none;
+  overflow: hidden;
 }
 
 /* Swipe area - when the keayboard is undetected*/
 #swipe-area {
-    display: none; /* Hidden by default */
-    background-color: var(--overlay-cream); /* Semi-transparent cream */
-    height: 150px;
-    margin: 10px auto;
-    border: 2px solid var(--brown);
-    touch-action: none;
-    color: #555;
-    padding: 10px;
-    font-size: 1.2em;
-    font-weight: bold;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    width:  min(90vmin, 600px);
+  display: none; /* Hidden by default */
+  background-color: var(--overlay-cream); /* Semi-transparent cream */
+  height: 150px;
+  margin: 10px auto;
+  border: 2px solid var(--brown);
+  touch-action: none;
+  color: #555;
+  padding: 10px;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: min(90vmin, 600px);
 }
 
 /* Snake & Food */
 .dachshund {
-    background-color: var(--dark-dachshund);
-    border-radius: 4px;
+  background-color: var(--dark-dachshund);
+  border-radius: 4px;
 }
 
 .food {
-    background-color: var(--food-red);
-    border-radius: 50%;
+  background-color: var(--food-red);
+  border-radius: 50%;
 }
 
 .head {
-    background-color: var(--head-dark) !important;
+  background-color: var(--head-dark) !important;
 }
 
 /* Footer */
 .game-footer {
-    padding: 10px;
-    color: var(--cream);
-    background-color: var(--overlay-black);
-    width: 100%;
-    text-align: center;
-    position: relative;
-    z-index: 10;
+  padding: 10px;
+  color: var(--cream);
+  background-color: var(--overlay-black);
+  width: 100%;
+  text-align: center;
+  position: relative;
+  z-index: 10;
 }
 
 .game-footer a {
-    color: var(--cream);
-    margin: 0 10px;
-    text-decoration: none;
+  color: var(--cream);
+  margin: 0 10px;
+  text-decoration: none;
 }
 
 .game-footer a:hover {
@@ -136,18 +136,18 @@ body {
 }
 
 /* Restart Button */
-#restart-btn {
-  font-family: 'Barriecito', cursive, sans-serif;;
-    padding: 6px 12px;
-    background: var(--food-red);
-    color: var(--dark-dachshund);
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1em;
+.restart-btn {
+  font-family: 'Barriecito', cursive, sans-serif;
+  padding: 6px 12px;
+  background: var(--food-red);
+  color: var(--dark-dachshund);
+  border: var(--dark-dachshund) solid 2px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
 }
 
-/* Screens Styles - Start screen and Game Over screen*/
+/* Screens Styles - Game Over screen*/
 .game-screen {
   display: none;
   position: fixed;
@@ -170,7 +170,7 @@ body {
   padding: 2rem;
   border-radius: 12px;
   border: 2px solid var(--brown);
-  max-width: 90%;
+  max-width: 100%;
 }
 
 ul {
@@ -179,6 +179,36 @@ ul {
 
 .fa-paw {
   color: #ff6347;
+}
+
+/* Dialog */
+#help-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+#help-dialog {
+  width: 90%;
+  max-width: 600px;
+  border: none;
+  padding: 0;
+  background: transparent;
+  position: fixed;
+  z-index: 1001;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Help button */
+.help-btn {
+  font-family: 'Barriecito', cursive, sans-serif;
+  padding: 6px 12px;
+  background: var(--dark-dachshund);
+  color: var(--cream);
+  border: var(--cream) solid 2px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 10px;
 }
 
 /* 404 Page Styles */
