@@ -9,7 +9,7 @@
 
 /* Root Variables */
 :root {
-   --cream: #F1E9D2;
+  --cream: #F1E9D2;
   --brown: #8B5E3C;
   --dark-dachshund: #222;
   --food-red: #ff6347;
@@ -275,7 +275,8 @@ body.error-page {
 }
 
 .about-container h2 {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
 /* media queries */
